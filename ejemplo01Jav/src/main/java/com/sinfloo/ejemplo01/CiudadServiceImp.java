@@ -1,0 +1,21 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.sinfloo.ejemplo01;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CiudadServiceImp implements CiudadService{
+    @Autowired
+    private CiudadRepositorio repositorio;
+    
+    @Override
+    public List<Ciudad> listarCi() {
+        return repositorio.findAll(); //To change body of generated methods, choose Tools | Templates.
+    }
+}

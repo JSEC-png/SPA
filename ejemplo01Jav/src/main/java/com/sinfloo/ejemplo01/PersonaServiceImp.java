@@ -25,6 +25,8 @@ public class PersonaServiceImp implements PersonaService{
     public List<Persona> listar() {
         return repositorio.findAll(); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    
 
     @Override
     public Persona listarId(int id) {

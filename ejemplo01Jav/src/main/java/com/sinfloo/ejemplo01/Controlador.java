@@ -29,6 +29,26 @@ public class Controlador {
     @Autowired
     PersonaService service;
     
+    @Autowired
+    CiudadService serviceCi;
+    
+    @Autowired
+    TipoDocumentoService serviceTi;
+    
+    
+    @GetMapping("/ciudades")
+    public List<Ciudad>listarCi(){
+        return serviceCi.listarCi();
+    
+    }
+    
+    @GetMapping("/tipos")
+    public List<TipoDocumento>listarTi(){
+        return serviceTi.listarTi();
+    
+    }
+    
+    
     @GetMapping
     public List<Persona>listar(){
         return service.listar();
@@ -50,10 +70,10 @@ public class Controlador {
     @PutMapping(path = {"/{id}"})
     public Persona editar(@RequestBody Persona p, @PathVariable("id") int id){
     
-        p.setId(id);
+        p.setIdpersona(id);
         return service.edit(p);
     }
-    
+        
     @DeleteMapping(path = ("/{id}"))
     public Persona delete(@PathVariable("id") int id){
         return service.delete(id);
